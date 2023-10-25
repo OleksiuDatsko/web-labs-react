@@ -3,7 +3,7 @@ import "./Home.css"
 import Button from "../../components/Button/Button"
 import HotelCard from "../../components/home/HotelCard/HotelCard";
 import hotel_hero from "../../images/hotel_hero.svg"
-import hotel from "/home/oleksii/Documents/Web/web-programing-react/hotels/src/images/hotel.svg"
+import hotel from "../../images/hotel.svg"
 
 const hotelText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer felis massa, fermentum id leo vitae, vulputate commodo metus. Maecenas facilisis finibus ipsum, sed pulvinar massa."
 
@@ -17,7 +17,7 @@ const Home = () => {
                         {hotelText}
                     </p>
                     <div className="home__button">
-                        <Button text="Consult today" styleType="filled" />
+                        <Button text="Buy today!" styleType="filled" to="/hotels"/>
                     </div>
                 </div>
                 <img
@@ -28,13 +28,13 @@ const Home = () => {
             </div>
             <div>
                 <ul className="hero_hotels-cards">
-                    <HotelCard title="Hotel1" text={hotelText} src={hotel} />
-                    <HotelCard title="Hotel1" text={hotelText} src={hotel} />
-                    <HotelCard title="Hotel1" text={hotelText} src={hotel} />
+                    <HotelCard title="Hotel1" text={hotelText} photo={hotel} />
+                    <HotelCard title="Hotel2" text={hotelText} photo={hotel} />
+                    <HotelCard title="Hotel3" text={hotelText} photo={hotel} />
                 </ul>
             </div>
             <div className="home__button">
-                <Button text="View more" styleType="outline" />
+                <Button text="View more" styleType="outline" to="/hotels"/>
             </div>
         </section>
     );

@@ -3,7 +3,7 @@ import "./Logo.css"
 
 const Logo = (props) => {
     return (
-        <h1 className="logo" style={{color: props.color}}>Hotels <b>Manager</b></h1>
+        <h1 className="logo" style={{color: props.color}}>Hotels <b>Shop</b></h1>
     );
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css"
 // import NavigationLinks from "../../../components/NavigationLinks/NavigationLinks"
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from "../../../components/Logo/Logo"
 
 const Header = () => {
@@ -13,8 +13,9 @@ const Header = () => {
                 </div>
                 <nav>
                     <ul className="header__right">
-                        <li><Link to="/hotels"> Hotels </Link> </li>
-                        <li><Link to="/"> Home </Link> </li>
+                        <li><NavLink to="/" className="header__nav-item"> Home </NavLink></li>
+                        <li><NavLink to="/hotels" className="header__nav-item" > Hotels </NavLink></li>
+                        <li><NavLink to="/cart" className="header__nav-item" > Cart </NavLink></li>
                     </ul>
                 </nav>
             </div>

@@ -8,15 +8,16 @@ const Footer = () => {
         <section className="footer">
             <footer className="conteiner linear-sections">
                 <Logo color="white" />
-                <nav id="nav-links" className="linear-nav">
+                <nav className="linear-nav">
                     <ul>
                         <li><Link to="/" className="footer__nav-item"> Home </Link></li>
                         <li><Link to="/hotels" className="footer__nav-item"> Hotels </Link></li>
+                        <li><Link to="/cart" className="footer__nav-item"> Cart </Link></li>
                     </ul>
                 </nav>
             </footer>
             <div className="footer__bottom">
-                2020 IoT © Copyright all rights reserved, bla bla
+                2023 IoT © Copyright all rights reserved
             </div>
         </section>
     );
