@@ -12,7 +12,7 @@ const Header = () => {
                     <Logo />
                 </div>
                 <nav>
-                    <ul className="header__right">
+                    <ul className="header__right linear-nav">
                         <li><NavLink to="/" className="header__nav-item"> Home </NavLink></li>
                         <li><NavLink to="/hotels" className="header__nav-item" > Hotels </NavLink></li>
                         <li><NavLink to="/cart" className="header__nav-item" > Cart </NavLink></li>

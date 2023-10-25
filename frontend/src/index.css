@@ -40,29 +40,11 @@ ul {
   line-height: 56px;
 }
 
-.logo {
-  width: 160px;
-  height: 41px;
-  background: transparent;
-}
-
-.line {
-  width: 56px;
-  height: 2px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: #000;
-}
-
 .linear-sections {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 165px;
-}
-
-.conteiner.linear-sections {
-  display: flex;
 }
 
 .linear-nav ul {
