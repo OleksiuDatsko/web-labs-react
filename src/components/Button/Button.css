@@ -1,0 +1,48 @@
+.default-button {
+  width: 200px;
+  height: 56px;
+  border-radius: 55px;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: none;
+  transition: background 0.2s, box-shadow 1s;
+}
+
+
+.default-button.outline:hover {
+  box-shadow: 44px 18px 296px -200px #F0C764 inset;
+}
+
+.default-button.filled:hover {
+  box-shadow: 44px 18px 296px -200px black inset;
+}
+
+
+.default-button.pulse {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+
+.default-button.filled,
+.default-button.outline:active {
+  color: #fff;
+  border: 0;
+  background: #F0C764;
+  box-shadow: none;
+}
+
+.default-button.outline,
+.default-button.filled:active {
+  color: #E95C66;
+  border: 2px solid #E95C66;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.default-button.smal {
+  width: 100px;
+  height: 28px;
+  font-size: 9px;
+  font-weight: 100;
+  border-width: 1px;
+}
