@@ -1,0 +1,27 @@
+.select_form {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 55px;
+    border: 2px solid #E95C66;
+    padding-left: 15px;
+    justify-content: space-between;
+    width: 25%;
+}
+
+.select_form__select {
+    border-radius: 55px;
+    background: none;
+    border: none;
+    padding-left: 10%;
+    font-size: medium;
+}
+
+.select_form__select:focus {
+    outline: none !important;
+
+}
+
+.select_form__lable {
+    font-weight: 400;
+}

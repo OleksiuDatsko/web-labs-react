@@ -1,0 +1,21 @@
+section.footer {
+    background: linear-gradient(183deg, #F0C764 -8.57%, #E95C66 82.96%);
+    margin-top: 1%;
+}
+
+.footer__nav-item {
+    display: flex;
+    margin-right: 166px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 60px;
+}
+
+.footer__bottom {
+    border-top: 1px dotted black;
+    color: white;
+    font-size: smaller;
+    display: flex;
+    justify-content: center;
+}

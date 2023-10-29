@@ -1,0 +1,43 @@
+.home__heading {
+    padding-left: 30%;
+}
+
+.home__button {
+    display: flex;
+    justify-content: center;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__hotel-shop {
+    padding-top: 191px;
+    padding-bottom: 154px;
+    padding-right: 109px;
+}
+
+.title.hero {
+    font-size: 3rem;
+}
+
+.paragraph.hero {
+    font-size: 1.2rem;
+    line-height: 32px;
+}
+
+.hero__image {
+    width: 100%;
+    height: auto;
+}
+
+.hero_hotels-cards {
+    padding-bottom: 72px;
+    padding-top: 80px;
+    padding-right: 12px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
