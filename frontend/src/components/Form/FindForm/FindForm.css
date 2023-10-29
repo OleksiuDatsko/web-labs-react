@@ -1,0 +1,19 @@
+.text_field {
+    border-radius: 55px;
+    border: none;
+    width: auto;
+    padding-left: 10%;
+    font-size: medium;
+}
+
+.text_field:focus {
+    outline: none !important;
+}
+
+.find_form {
+    height: 40px;
+    display: flex;
+    align-items: baseline;
+    border-radius: 55px;
+    border: 2px solid #E95C66;
+}

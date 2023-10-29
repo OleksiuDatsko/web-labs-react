@@ -6,6 +6,7 @@
   font-weight: 700;
   box-shadow: none;
   transition: background 0.2s, box-shadow 1s;
+  padding: 0 !important;
 }
 
 
@@ -15,11 +16,6 @@
 
 .default-button.filled:hover {
   box-shadow: 44px 18px 296px -200px black inset;
-}
-
-
-.default-button.pulse {
-  animation: pulse 2s infinite ease-in-out;
 }
 
 
@@ -39,10 +35,14 @@
   box-shadow: none;
 }
 
-.default-button.smal {
+.default-button.small {
   width: 100px;
-  height: 28px;
-  font-size: 9px;
-  font-weight: 100;
-  border-width: 1px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  border-width: 2px;
+}
+
+.default-button.noneBorder {
+  border: none;
 }

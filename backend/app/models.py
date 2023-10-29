@@ -10,10 +10,11 @@ class HttpError(Exception):
 class Hotel:
     id: str
     name: str
-    total_rooms: int
+    text: str
     total_visitors: int
+    price: float
 
-    hotel_atributes = ("id", "name", "total_rooms", "total_visitors")
+    hotel_atributes = ("id", "name", "text", "total_rooms", "price")
 
     prefix: str = "hotels"
 

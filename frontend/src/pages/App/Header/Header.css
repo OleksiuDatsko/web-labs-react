@@ -22,9 +22,14 @@ section.header {
   padding-left: 40px;
   padding-right: 40px;
   border-radius: 55px;
+
+  transition: box-shadow 1s, background-color 0.5s;
+}
+
+.header__nav-item:hover {
+  box-shadow: inset  0px 0px 10px 6px #f0c66454;
 }
 
 .header__nav-item.active {
   background-color: #f0c6648f;
-
 }

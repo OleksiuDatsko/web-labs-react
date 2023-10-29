@@ -6,7 +6,7 @@
     box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.4);
 
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
 
@@ -15,9 +15,17 @@
     z-index: 0;
 
     transition: box-shadow 1s;
+
 }
 
 .hotel-card:hover {
     box-shadow: 0px 0px 80px 70px rgba(229, 233, 246, 0.4);
     z-index: 1;
+}
+
+.one_line_hotel_info{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
 }
