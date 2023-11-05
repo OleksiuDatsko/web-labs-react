@@ -11,11 +11,11 @@ const options = [
 ]
 
 
-const Filters = () => {
+const Filters = (props) => {
     return (
         <section className="conteiner filter">
-            <SelectForm options={options} label="Sort by:" />
-            <FindForm placeholder="Hotel name" />
+            <SelectForm options={options} label="Sort by:" setSortBy={props.setSortBy}/>
+            <FindForm options={options} setHotelsProp={props.setHotelsProp} setFindBy={props.setFindBy}/>
         </section>
     );
 };

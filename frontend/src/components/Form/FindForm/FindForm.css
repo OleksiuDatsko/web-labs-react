@@ -1,7 +1,7 @@
 .text_field {
     border-radius: 55px;
     border: none;
-    width: auto;
+    width: 50%;
     padding-left: 10%;
     font-size: medium;
 }
@@ -16,8 +16,4 @@
     align-items: baseline;
     border-radius: 55px;
     border: 2px solid #E95C66;
-}
-
-.find_form:has(.text_field:focus) {
-    border: 2.1px solid black;
 }
