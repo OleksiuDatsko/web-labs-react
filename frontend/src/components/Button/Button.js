@@ -5,12 +5,15 @@ import { Link } from 'react-router-dom';
 
 const DefaultButton = (props) => {
     return (
-        <button className={
-            `default-button
+        <button
+            className={
+                `default-button
                 ${props.styleType}
                 ${props.size}
                 ${props.noneBorder ? 'noneBorder' : ''}`
-        }>
+            }
+            onClick={props.onClick}
+        >
             {props.text}
         </button>
     );

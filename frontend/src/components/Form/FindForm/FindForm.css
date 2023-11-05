@@ -17,3 +17,7 @@
     border-radius: 55px;
     border: 2px solid #E95C66;
 }
+
+.find_form:has(.text_field:focus) {
+    border: 2.1px solid black;
+}

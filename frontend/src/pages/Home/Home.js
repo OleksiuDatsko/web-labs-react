@@ -1,23 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css"
 import Button from "../../components/Button/Button"
 import HotelCard from "../../components/home/HotelCard/HotelCard";
 import hotel_hero from "../../images/hotel_hero.svg"
-import hotel from "../../images/hotel.svg"
+import Catalog from "../../components/Catalog/Catalog";
+import { getAllHotels } from "../../services/api";
 
-const hotelText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer felis massa, fermentum id leo vitae, vulputate commodo metus. Maecenas facilisis finibus ipsum, sed pulvinar massa."
+const hotels = await getAllHotels() ? await getAllHotels() : [];
+
 
 const Home = () => {
+    const [hotelsToRender, setHotelsToRender] = useState(3);
     return (
         <section className="conteiner home__hero">
             <div className="conteiner hero">
                 <div className="hero__hotel-shop">
                     <h1 className="title hero">Hotels shop</h1>
                     <p className="paragraph hero">
-                        {hotelText}
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer felis massa, fermentum id leo vitae, vulputate commodo metus. Maecenas facilisis finibus ipsum, sed pulvinar massa.
                     </p>
                     <div className="home__button">
-                        <Button text="Buy today!" styleType="filled" to="/hotels"/>
+                        <Button text="Buy today!" styleType="filled" to="/hotels" />
                     </div>
                 </div>
                 <img
@@ -27,14 +30,13 @@ const Home = () => {
                 />
             </div>
             <div>
-                <ul className="hero_hotels-cards">
-                    <HotelCard title="Hotel1" text={hotelText} photo={hotel} />
-                    <HotelCard title="Hotel2" text={hotelText} photo={hotel} />
-                    <HotelCard title="Hotel3" text={hotelText} photo={hotel} />
-                </ul>
+                <Catalog HotelCard={HotelCard} hotelsToRender={hotelsToRender} hotels={hotels} />
             </div>
             <div className="home__button">
-                <Button text="View more" styleType="outline" to="/hotels"/>
+                {hotelsToRender < hotels.length ?
+                    <Button text="View more" styleType="outline" onClick={() => { setHotelsToRender(hotelsToRender + 3) }} /> :
+                    undefined
+                }
             </div>
         </section>
     );

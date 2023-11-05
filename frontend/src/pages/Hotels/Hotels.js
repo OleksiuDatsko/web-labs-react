@@ -1,12 +1,13 @@
 import React from "react";
 import Filters from "./Filters/Filters";
-import Catalog from "./Catalog/Catalog";
+import Catalog from "../../components/Catalog/Catalog";
+import HotelCard from "../../components/catalog/HotelCard/HotelCard";
 
 const Hotels = () => {
     return (
         <>
             <Filters />
-            <Catalog />
+            <Catalog HotelCard={HotelCard}/>
         </>
     );
 };
