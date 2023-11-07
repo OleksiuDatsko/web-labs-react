@@ -23,8 +23,8 @@ def respond_status(fn):
             return fn(*args, **kwargs)
         except HttpError as ex:
             return Response(status=ex.status)
-        # except Exception:
-        #     return Response(status=500)
+        except Exception:
+            return Response(status=500)
 
     return inner
 
@@ -34,7 +34,8 @@ def respond_status(fn):
 @respond_status
 def get_all_create_new():
     if request.method == "GET":
-        return Hotel.get_all()
+        print(request.args, flush=True)
+        return Hotel.get_all(**request.args)
     if request.method == "POST":
         hotel = request.json
         return Hotel.create(hotel)
