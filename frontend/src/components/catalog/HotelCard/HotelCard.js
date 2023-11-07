@@ -26,7 +26,7 @@ const HotelCard = ({ src = { hotel }, id, name, text, total_rooms, price }) => {
                     {total_rooms}
                 </p>
             </div>
-            <Button text="View more" styleType="outline" />
+            <Button text="View more" styleType="outline" to={id}/>
         </li>
     );
 }
