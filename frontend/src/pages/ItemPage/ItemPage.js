@@ -4,9 +4,9 @@ import { useParams } from "react-router-dom";
 import { getHotel } from "../../services/api";
 import hotel from "../../images/hotel.svg"
 import Button from "../../components/Button/Button"
+import Loading from "../../components/Loading/Loading";
 
 const HotelPage = ({ id, characteristics, name, text, total_rooms, price }) => {
-    console.log({ id, name, characteristics, text, total_rooms, price })
     characteristics = characteristics ? JSON.parse(characteristics) : []
     return (
         <div className="hotel_info">
@@ -32,18 +32,22 @@ const ItemPage = () => {
     const { id } = useParams();
     const [hotel, setHotel] = useState({});
     const [isLoading, setIsLoading] = useState(false);
-    console.log(hotel)
-    console.log(isLoading)
 
+    const fetchHotel = async (id) => {
+        setIsLoading(true)
+        const hotel = await getHotel(id) 
+        setHotel(hotel)
+        setIsLoading(false)
+    }
+    
     useEffect(() => {
-        setIsLoading(true);
-        getHotel(id, setHotel, setIsLoading)
+        fetchHotel(id)
     }, [id])
 
     return (
         <div className="hotel_page conteiner">
             {isLoading ?
-                <div class="loader">Loading...</div>
+                <Loading />
                 :
                 HotelPage(hotel)
             }

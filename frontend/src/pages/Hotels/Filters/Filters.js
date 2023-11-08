@@ -15,7 +15,7 @@ const Filters = (props) => {
     return (
         <section className="conteiner filter">
             <SelectForm options={options} label="Sort by:" setSortBy={props.setSortBy}/>
-            <FindForm options={options} setHotelsProp={props.setHotelsProp} setFindBy={props.setFindBy}/>
+            <FindForm options={options} setHotelsProp={props.setHotelsProp} setFindBy={props.setFindBy} setHotelName={props.setHotelName}/>
         </section>
     );
 };

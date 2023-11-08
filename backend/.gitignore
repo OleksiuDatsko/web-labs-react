@@ -2,3 +2,4 @@ redis_db/
 venv/
 dump.rdb
 .env
+__pycache__/

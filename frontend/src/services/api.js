@@ -1,56 +1,54 @@
 import axios from 'axios';
 
-const axiosInstance = axios.create({
-  baseURL: 'http://localhost:5000/hotels/',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+const BASE_URL = "http://localhost:5000";
+const RESOURCE_URL = `${BASE_URL}/hotels/`;
 
-export const getAllHotels = async () => {
-    try {
-      const response = await axiosInstance.get('');
-      return response.data;
-    } catch (error) {
-      console.error('HTTP ERROR:', error);
+const baseRequest = async ({ urlPath = "", method = "GET", queryParams = {}, body = null }) => {
+  console.log({ urlPath, method, queryParams, body });
+  try {
+    const reqParams = {
+      method,
+      url: `${RESOURCE_URL}${urlPath}`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    if (queryParams) {
+      reqParams.params = queryParams;
     }
-  };
-  
-  export const getHotel = async (id, setState, setIsLoading) => {
-    try {
-      const response = await axiosInstance.get(`${id}/`);
-      setState(response.data);
-      setIsLoading(false);
-      return response.data;
-    } catch (error) {
-      console.error('HTTP ERROR:', error);
+
+    if (body) {
+      reqParams.data = JSON.stringify(body);
     }
-  };
-  
-  export const postHotel = async (body) => {
-    try {
-      const response = await axiosInstance.post('', body);
-      return response.data;
-    } catch (error) {
-      console.error('HTTP ERROR:', error);
-    }
-  };
-  
-  export const delHotel = async (id) => {
-    try {
-      const response = await axiosInstance.delete(`${id}/`);
-      return response.data;
-    } catch (error) {
-      console.error('HTTP ERROR:', error);
-    }
-  };
-  
-  export const editHotel = async (id, body) => {
-    try {
-      await axiosInstance.put(`${id}/`, body);
-      return getAllHotels();
-    } catch (error) {
-      console.error('HTTP ERROR:', error);
-    }
-  };
-  
+
+    const response = await axios(reqParams);
+    return response.data;
+  } catch (error) {
+    console.error("HTTP ERROR: ", error);
+  }
+};
+
+export const getAllHotels = async (queryParams) => {
+  const hotels = await baseRequest({ method: "GET", queryParams });
+  return hotels;
+};
+
+export const getHotel = async (id) => {
+  const hotel = await baseRequest({ method: "GET", urlPath: `${id}/` });
+  return hotel
+}
+
+export const postHotel = async (body) => {
+  await baseRequest({ method: "POST", body });
+};
+
+export const delHotel = async (id) => {
+  await baseRequest({ method: "DELETE", urlPath: `${id}/` });
+  return getAllHotels();
+};
+
+export const editHotel = async (id, body) => {
+  await baseRequest({ method: "PUT", urlPath: `${id}/`, body });
+  return getAllHotels();
+};

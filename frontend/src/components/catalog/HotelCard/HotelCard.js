@@ -4,7 +4,6 @@ import hotel from "../../../images/hotel.svg"
 import Button from "../../Button/Button";
 
 const HotelCard = ({ src = { hotel }, id, name, text, total_rooms, price }) => {
-    console.log(id)
     return (
         <li key={id} className="hotel-card">
             <img src={src} alt="hotel img" />

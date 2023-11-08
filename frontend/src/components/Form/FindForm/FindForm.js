@@ -7,17 +7,23 @@ const FindForm = (props) => {
     let [selectedOption, setSelectedOption] = useState("name");
     let [findProp, setFindProp] = useState("")
 
+    const handleTextInputChange = (event) => {
+        setFindProp(event.target.value)
+        if (selectedOption === "name") {
+            props.setHotelName(event.target.value)
+        }
+    }
+
     const handleFindButton = (option, prop) => {
-        console.log(option, prop)
         props.setFindBy(option)
         props.setHotelsProp(prop)
     }
 
     return (
         <div className="find_form">
-            <input type="text" className="text_field" placeholder="Find by ..." onChange={(event) => {setFindProp(event.target.value)}}></input>
-            <SelectComponent options={props.options} setSelectedOption={setSelectedOption}/>
-            <Button text="Find" styleType="outline" size="small" noneBorder onClick={() => {handleFindButton(selectedOption, findProp)}} />
+            <input type="text" className="text_field" placeholder="Find by ..." onChange={(event) => handleTextInputChange(event)}></input>
+            <SelectComponent options={props.options} setSelectedOption={setSelectedOption} />
+            <Button text="Find" styleType="outline" size="small" noneBorder onClick={() => { handleFindButton(selectedOption, findProp) }} />
         </div>
     );
 }

@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Catalog.css"
 
 import { getAllHotels } from "../../services/api";
 import hotel from "../../images/hotel.svg"
-
-const hotels_from_backend = await getAllHotels() ? await getAllHotels() : [];
+import Loading from "../Loading/Loading";
 
 const SortHotels = (hotels, sortOption) => {
   if (sortOption === "name") {
@@ -47,33 +46,45 @@ const SortHotels = (hotels, sortOption) => {
 }
 
 const findHotels = (hotels, option, prop) => {
-  console.log(hotels, option, prop)
   if (option === '' || prop === '') {
     return hotels
-  } 
+  }
   if (option === "name") {
-    return hotels.filter((hotel) => hotel.name.search(prop) !== -1);
+    return hotels.filter((hotels) => hotels.name.search(prop) !== -1);
   }
   if (option === "total_rooms") {
-    return hotels.filter((hotel) => hotel.total_rooms >= Number(prop));
+    return hotels.filter((hotels) => hotels.total_rooms >= Number(prop));
   }
   if (option === "price") {
-    return hotels.filter((hotel) => hotel.price <= Number(prop));
+    return hotels.filter((hotels) => hotels.price <= Number(prop));
   }
   return hotels
 }
 
 const Catalog = (props) => {
-  let hotels = props.hotels ? props.hotels : hotels_from_backend;
-  hotels = hotels.slice(0, props.hotelsToRender && props.hotelsToRender < hotels.length ? props.hotelsToRender : undefined)
-  console.log(hotels)
+  const [hotels, setHotels] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  hotels = findHotels(hotels, props.findBy, props.hotelsProp)
+  const fetchAllHotels = async (props) => {
+    setIsLoading(true)
+    const hotels = await getAllHotels({ name: props.hotelName })
+    console.log(hotels, props.hotelName)
 
-  SortHotels(hotels, props.sortBy)
-  
+    SortHotels(hotels, props.sortBy)
+
+    setHotels(findHotels(hotels, props.findBy, props.hotelsProp))
+    setIsLoading(false)
+  }
+
+  useEffect(() => {
+    fetchAllHotels(props)
+  }, [props])
+
   return (
     <section className="conteiner catalog">
+      <div className={isLoading ? "loading" : "loaded"}>
+        {isLoading && <Loading />}
+      </div>
       <ul className="hero_hotels-cards">
         {hotels.map(({ id, name, text, total_rooms, price, photo = hotel }) => {
           return <props.HotelCard

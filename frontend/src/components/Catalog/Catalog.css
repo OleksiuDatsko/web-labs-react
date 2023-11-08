@@ -1,0 +1,7 @@
+.loading {
+    height: 77vh;
+}
+
+.loaded {
+    display: none;
+}
