@@ -10,6 +10,10 @@
 }
 
 
+.default-button:hover {
+  cursor: pointer;
+}
+
 .default-button.outline:hover {
   box-shadow: 44px 18px 296px -200px #F0C764 inset;
 }

@@ -67,8 +67,12 @@ const Catalog = (props) => {
 
   const fetchAllHotels = async (props) => {
     setIsLoading(true)
-    const hotels = await getAllHotels({ name: props.hotelName })
-    console.log(hotels, props.hotelName)
+
+    const hotels = props.hotels ?
+      props.hotels.slice(0, props.hotelsToRender && props.hotelsToRender < props.hotels.length ? props.hotelsToRender : undefined)
+      :
+      await getAllHotels(props.hotelName ? { name: props.hotelName } : undefined)
+    console.log(hotels, props.hotelName, props.hotels)
 
     SortHotels(hotels, props.sortBy)
 
