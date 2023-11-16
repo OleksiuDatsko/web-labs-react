@@ -85,7 +85,7 @@ const Catalog = (props) => {
   }, [props])
 
   return (
-    <section className="conteiner catalog">
+    <>
       <div className={isLoading ? "loading" : "loaded"}>
         {isLoading && <Loading />}
       </div>
@@ -102,7 +102,7 @@ const Catalog = (props) => {
           />
         })}
       </ul>
-    </section>
+    </>
   );
 };
 

@@ -10,12 +10,10 @@
 }
 
 
-.default-button:hover {
-  cursor: pointer;
-}
 
 .default-button.outline:hover {
   box-shadow: 44px 18px 296px -200px #F0C764 inset;
+
 }
 
 .default-button.filled:hover {
@@ -49,4 +47,9 @@
 
 .default-button.noneBorder {
   border: none;
+}
+
+.default-button.big-text {
+  font-weight: bolder;
+  font-size: larger;
 }

@@ -1,0 +1,38 @@
+.cart-hotel-card {
+    width: 90%;
+    height: 50px;
+    padding: 5%;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.4);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-content: center;
+    align-items: center;
+
+    margin-bottom: 35px;
+    margin-left: 35px;
+    z-index: 0;
+
+    transition: box-shadow 1s;
+
+}
+
+.cart-hotel-card:hover {
+    box-shadow: 0px 0px 80px 70px rgba(229, 233, 246, 0.4);
+    z-index: 1;
+}
+
+.hotel__price {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.hotel__price>* {
+    padding-left: 10px;
+}

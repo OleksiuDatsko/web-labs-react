@@ -1,0 +1,19 @@
+.cart.conteiner {
+    margin-bottom: 100px;
+    min-height: 77vh;
+}
+
+.cart__title {
+    width: 100%;
+    text-align: center;
+}
+
+.cart__total-amount{
+    text-align: right;
+    width: 90%;
+}
+
+.cart__buttons {
+    display: flex;
+    justify-content: space-around;
+}
