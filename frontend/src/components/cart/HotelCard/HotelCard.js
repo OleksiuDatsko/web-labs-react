@@ -9,7 +9,6 @@ const HotelCard = ({ src = { hotel }, id, name, text, total_rooms, price }) => {
     const dispatch = useDispatch();
 
     function removeHotelFromCart() {
-        console.log(id, "deleted from cart")
         dispatch(removeFromCart(id));
     }
 

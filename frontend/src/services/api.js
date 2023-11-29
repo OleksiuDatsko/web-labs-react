@@ -38,17 +38,3 @@ export const getHotel = async (id) => {
   const hotel = await baseRequest({ method: "GET", urlPath: `${id}/` });
   return hotel
 }
-
-export const postHotel = async (body) => {
-  await baseRequest({ method: "POST", body });
-};
-
-export const delHotel = async (id) => {
-  await baseRequest({ method: "DELETE", urlPath: `${id}/` });
-  return getAllHotels();
-};
-
-export const editHotel = async (id, body) => {
-  await baseRequest({ method: "PUT", urlPath: `${id}/`, body });
-  return getAllHotels();
-};

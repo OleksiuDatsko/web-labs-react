@@ -19,7 +19,7 @@ export const hotelsInCartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, setHotelsInCart } =
+export const { addToCart, removeFromCart } =
   hotelsInCartSlice.actions;
 
 export default hotelsInCartSlice.reducer;

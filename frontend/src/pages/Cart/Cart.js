@@ -21,7 +21,7 @@ const Cart = () => {
                 <Catalog HotelCard={HotelCard} hotels={hotels} />
                 <div className="cart__buttons">
                     <Button text="Back to catalog" styleType="outline" to="/hotels" />
-                    <Button text="Continue" styleType="filled" />
+                    {hotels.length !== 0 && <Button text="Continue" styleType="filled" />}
                 </div>
             </div>
         </section>

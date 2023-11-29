@@ -71,8 +71,7 @@ const Catalog = (props) => {
     const hotels = props.hotels ?
       props.hotels.slice(0, props.hotelsToRender && props.hotelsToRender < props.hotels.length ? props.hotelsToRender : undefined)
       :
-      await getAllHotels(props.hotelName ? { name: props.hotelName } : undefined)
-    console.log(hotels, props.hotelName, props.hotels)
+      await getAllHotels(props.hotelName ? { name: props.hotelName } : undefined) || []
 
     SortHotels(hotels, props.sortBy)
 
