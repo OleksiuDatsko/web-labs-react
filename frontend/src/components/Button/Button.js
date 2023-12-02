@@ -12,9 +12,10 @@ const DefaultButton = (props) => {
                 ${props.size}
                 ${props.noneBorder ? 'noneBorder' : ''}`
             }
+            type={props.type}
             onClick={props.onClick}
         >
-            {props.text}
+            {props.text || props.children}
         </button>
     );
 }
